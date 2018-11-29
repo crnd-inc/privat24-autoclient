@@ -13,10 +13,10 @@ class Privat24Api(object):
         'Accept': 'application/json',
     }
 
-    def __init__(self, bank_acc_number, id, token) -> None:
+    def __init__(self, bank_acc_number, client_id, token) -> None:
         super().__init__()
         self.bank_acc_number = bank_acc_number
-        self.HEADERS['id'] = id
+        self.HEADERS['id'] = client_id
         self.HEADERS['Token'] = token
 
     def request_url(self, type_request='data', **arg):
@@ -30,11 +30,9 @@ class Privat24Api(object):
             if type_request == 'rest':
                 return r.json()['balanceResponse']
         elif r.status_code == 400:
-            respond = r.json()
-            parameter = respond['parameter'] if 'parameter' in respond else ''
             raise Exception(
-                ('Invalid request format or missing one or more required '
-                 'headers! Error 400').format(parameter))
+                'Invalid request format or missing one or more required '
+                'headers! Error 400')
         elif r.status_code == 401:
             raise Exception(
                 'Incorrect credentials for access (id and / or token)! '
