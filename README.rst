@@ -4,9 +4,9 @@ Privat24 Autoclient SDK-Python
 =====
 
 :Version: 1.0.0
-:Web: https://github.com/kitworkssystems/privat24-sdk-python
-:Download: https://github.com/kitworkssystems/privat24-sdk-python
-:Source: https://github.com/kitworkssystems/privat24-sdk-python
+:Web: https://github.com/kitworkssystems/privat24-autoclient-sdk-python
+:Download: https://github.com/kitworkssystems/privat24-autoclient-sdk-python
+:Source: https://github.com/kitworkssystems/privat24-autoclient-sdk-python
 :Keywords: privat24, privatbank, python
 
 
@@ -19,7 +19,7 @@ Installation
 
 From github
 ::
-    $ pip install git+https://github.com/kitworkssystems/privat24-sdk-python#egg=privat24
+    $ pip install git+https://github.com/kitworkssystems/privat24-autoclient-sdk-python#egg=privat24
 
 
 https://docs.google.com/document/d/e/2PACX-1vTtKvGa3P4E-lDqLg3bHRF6Wi9S7GIjSMFEFxII5qQZBGxuTXs25hQNiUU1hMZQhOyx6BNvIZ1bVKSr/pub
