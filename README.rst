@@ -19,7 +19,7 @@ Installation
 
 From github
 ::
-    $ pip install git+https://github.com/kitworkssystems/privat24-autoclient-sdk-python#egg=privat24_autoclient_sdk_python
+    $ pip install git+https://github.com/kitworkssystems/privat24-autoclient-sdk-python#egg=privat24-autoclient-sdk-python
 
 
 https://docs.google.com/document/d/e/2PACX-1vTtKvGa3P4E-lDqLg3bHRF6Wi9S7GIjSMFEFxII5qQZBGxuTXs25hQNiUU1hMZQhOyx6BNvIZ1bVKSr/pub

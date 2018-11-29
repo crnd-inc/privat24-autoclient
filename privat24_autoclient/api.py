@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 import requests
 
 
-class Privat24Api(object):
+class Privat24AutoclientApi(object):
     BASE_URL = 'https://acp.privatbank.ua/api/proxy'
     HEADERS = {
         'User-Agent': 'python',
@@ -13,7 +13,7 @@ class Privat24Api(object):
         'Accept': 'application/json',
     }
 
-    def __init__(self, bank_acc_number, client_id, token) -> None:
+    def __init__(self, bank_acc_number, client_id, token):
         super().__init__()
         self.bank_acc_number = bank_acc_number
         self.HEADERS['id'] = client_id

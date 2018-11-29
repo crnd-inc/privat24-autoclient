@@ -2,8 +2,8 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='privat24autoclientsdk-python',
-    version='1.0',
+    name='privat24-autoclient-sdk-python',
+    version='1.0.1',
     description='Privat24 Python SDK',
     packages=find_packages(),
     include_package_data=True,
