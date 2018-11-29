@@ -2,7 +2,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='kws-privat24-python',
+    name='privat24-python',
     version='1.0',
     description='Privat24 Python SDK',
     packages=find_packages(),
