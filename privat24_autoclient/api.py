@@ -1,6 +1,31 @@
+import json
 from datetime import datetime, timedelta
 
 import requests
+
+PAYMENT_REQUIDED_FIELDS = [
+    'document_number',
+    'recipient_nceo',
+    'payment_naming',
+    'recipient_ifi',
+    'payment_amount',
+    'payment_destination',
+]
+
+PAYMENT_FIELDS = PAYMENT_REQUIDED_FIELDS + [
+    'recipient_account',
+    'recipient_card',
+
+    'document_type',
+    'payment_date',
+    'payment_accept_date',
+    'payment_cb_ref',
+    'copy_from_ref',
+    'attach',
+    'signer_msg',
+    'odb_msg',
+    'recipient_ifi_text',
+]
 
 
 class Privat24AutoclientApi(object):
@@ -87,3 +112,26 @@ class Privat24AutoclientApi(object):
 
     def get_server_date(self):
         return self.request_url(type_request='date', )
+
+    def create_payment(self, **kwargs):
+        kwargs['payer_account'] = self.bank_acc_number
+
+        for x in PAYMENT_REQUIDED_FIELDS:
+            if x not in kwargs.keys():
+                raise Exception(
+                    '"{}" parameter is required!'.format(x))
+
+        if 'recipient_account' not in kwargs.keys() and \
+                'recipient_card' not in kwargs.keys():
+            raise Exception(
+                '"recipient_account" or "recipient_card" '
+                'parameter is required!')
+
+        for x in kwargs.keys():
+            if x not in PAYMENT_FIELDS:
+                kwargs.pop(x)
+
+        return self.request_url(
+            type_request='payment/create_pred',
+            body=json.dumps(kwargs),
+        )
