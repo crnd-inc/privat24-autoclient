@@ -87,7 +87,7 @@ class Privat24AutoclientApi(object):
         return self.request_url(
             type_request='transactions',
             period='date',
-            acc=self.bank_acc_number,
+            acc=self.bank_acc_number.replace(' ', ''),
             startDate=start_date_text,
             endDate=end_date_text,
         )
